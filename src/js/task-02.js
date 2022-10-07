@@ -12,9 +12,9 @@ const ingredientsList = document.querySelector("#ingredients");
 // console.log(ingredientsList);
 
 ingredients.forEach(function (ingredients) {
-  const listItem = document.createElement("li");
-  listItem.textContent = ingredients;
-  listItem.classList.add("item");
-  ingredientsList.appendChild(listItem);
+  const listItemEl = document.createElement("li");
+  listItemEl.textContent = ingredients;
+  listItemEl.classList.add("item");
+  ingredientsList.appendChild(listItemEl);
   // console.log(listItem);
 });
