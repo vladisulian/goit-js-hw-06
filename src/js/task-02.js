@@ -7,14 +7,14 @@ const ingredients = [
   "Condiments",
 ];
 
-// marked #ingredients
+// ? marked #ingredients through querySelector
 const ingredientsList = document.querySelector("#ingredients");
-console.log(ingredientsList);
+// console.log(ingredientsList);
 
 ingredients.forEach(function (ingredients) {
   const listItem = document.createElement("li");
   listItem.textContent = ingredients;
   listItem.classList.add("item");
-  console.log(listItem);
   ingredientsList.appendChild(listItem);
+  // console.log(listItem);
 });
