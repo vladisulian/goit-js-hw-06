@@ -6,7 +6,7 @@ document.body.append(h);
 //   "Можно ввести пустой инпут, и он пройдёт валидацию, если пробелов будет больше чем 6. Если меньше - то не засчитывает. Как решить проблему?";
 // document.body.append(p);
 function inputValidationCheck() {
-  if (inputEl.value.length >= 6 && !inputEl.value.includes(" ")) {
+  if (inputEl.value.length === 6 && !inputEl.value.includes(" ")) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
 
@@ -16,7 +16,7 @@ function inputValidationCheck() {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
 
-    h.textContent = "We need to remove empty spaces!";
+    h.textContent = "You need to remove empty spaces!";
     h.style.color = "orange";
   } else {
     inputEl.classList.add("invalid");
