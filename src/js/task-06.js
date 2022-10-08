@@ -12,6 +12,9 @@ function inputValidationCheck() {
 
     h.textContent = "Input is valid";
     h.style.color = "green";
+  } else if (inputEl.value.length > 6 && !inputEl.value.includes(" ")) {
+    h.textContent = "You can use maximum 6 symbols";
+    h.style.color = "red";
   } else if (inputEl.value.includes(" ")) {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
