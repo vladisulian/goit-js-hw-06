@@ -18,6 +18,9 @@ function inputValidationCheck() {
 
     h.textContent = "You need to remove empty spaces!";
     h.style.color = "orange";
+  } else if (inputEl.value.length === 0) {
+    inputEl.classList.remove("invalid", "valid");
+    h.textContent = "";
   } else {
     inputEl.classList.add("invalid");
     inputEl.classList.remove("valid");
