@@ -20,7 +20,8 @@ function onFormSubmit(event) {
     const mailValue = formElements.email.value;
     const passwordValue = formElements.password.value;
 
-    console.log("Mail:", mailValue, "\n", "Password:", passwordValue);
+    console.log("Mail:", mailValue);
+    console.log("Password:", passwordValue);
   }
 
   form.reset();
