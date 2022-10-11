@@ -1,18 +1,23 @@
 const inputEl = document.querySelector("#validation-input");
 const h = document.createElement("h1");
 const p = document.createElement("p");
+const maxLength = inputEl.getAttribute("data-length");
+const parsMaxLength = parseInt(maxLength, 10);
 document.body.append(h);
 // p.textContent =
 //   "Можно ввести пустой инпут, и он пройдёт валидацию, если пробелов будет больше чем 6. Если меньше - то не засчитывает. Как решить проблему?";
 // document.body.append(p);
 function inputValidationCheck() {
-  if (inputEl.value.length === 6 && !inputEl.value.includes(" ")) {
+  if (inputEl.value.length === parsMaxLength && !inputEl.value.includes(" ")) {
     inputEl.classList.add("valid");
     inputEl.classList.remove("invalid");
 
     h.textContent = "Input is valid";
     h.style.color = "green";
-  } else if (inputEl.value.length > 6 && !inputEl.value.includes(" ")) {
+  } else if (
+    inputEl.value.length > parsMaxLength &&
+    !inputEl.value.includes(" ")
+  ) {
     h.textContent = "You can use maximum 6 symbols";
     h.style.color = "red";
   } else if (inputEl.value.includes(" ")) {
