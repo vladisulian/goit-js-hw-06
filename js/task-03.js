@@ -13,21 +13,31 @@ const images = [
   },
 ];
 const galleryList = document.querySelector(".gallery");
-galleryList.style.display = "flex";
-galleryList.style.gap = "35px";
 
-images.forEach(function (images) {
-  const galleryLi = document.createElement("li");
-  galleryLi.style.listStyleType = "none";
+// images.forEach(function (images) {
+//   const galleryLi = document.createElement("li");
+//   galleryLi.style.listStyleType = "none";
 
-  const imgEl = document.createElement("img");
-  imgEl.src = images.url;
-  imgEl.alt = images.alt;
-  imgEl.style.width = "250px";
-  imgEl.style.height = "150px";
-  imgEl.style.borderRadius = "45%";
+//   const imgEl = document.createElement("img");
+//   imgEl.src = images.url;
+//   imgEl.alt = images.alt;
+//   imgEl.style.width = "250px";
+//   imgEl.style.height = "150px";
+//   imgEl.style.borderRadius = "45%";
 
-  galleryLi.append(imgEl);
-  galleryList.append(galleryLi);
-});
-console.log(galleryList);
+//   galleryLi.append(imgEl);
+//   galleryList.append(galleryLi);
+// });
+// console.log(galleryList);
+
+const createGalleryItem = ({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}" style="border-radius: 45%"  width = 200 height = 150></li>`;
+const galleryMarkup = images.reduce(
+  (acc, item) => acc + createGalleryItem(item),
+  ""
+);
+galleryList.insertAdjacentHTML("afterbegin", galleryMarkup);
+galleryList.setAttribute(
+  "style",
+  "list-style-type:none; display: flex; gap: 35px"
+);
